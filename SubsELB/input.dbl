@@ -15,7 +15,7 @@ subroutine input
     required out mismatch   Field        ,n  ;Field to return the input into
     optional in             IsRequired   ,n  ;Null entry is not allowed
     optional in             NegativeOK   ,n  ;Allow negative numbers in numerics
-    optional in             IsDateField  ,n  Do date validation & display
+    optional in             IsDateField  ,a  ;Do date validation & display
     endparams
 
     record
@@ -34,6 +34,7 @@ subroutine input
         pending     ,i4
     endrecord
 
+	.include "WND:windows.def"
 proc
 
     ;Do input, depending on the data-type of the argument we were passed
